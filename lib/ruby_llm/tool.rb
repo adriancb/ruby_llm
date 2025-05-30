@@ -49,7 +49,7 @@ module RubyLLM
     end
 
     def name
-      self.class.name
+      self.class.name.demodulize
           .unicode_normalize(:nfkd)
           .encode('ASCII', replace: '')
           .gsub(/[^a-zA-Z0-9_-]/, '-')
